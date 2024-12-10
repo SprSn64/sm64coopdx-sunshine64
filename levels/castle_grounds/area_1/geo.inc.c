@@ -3,7 +3,8 @@
 const GeoLayout castle_grounds_area_1_geo[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
-		GEO_DISPLAY_LIST(LAYER_OPAQUE, castle_grounds_dl_Main_mesh_layer_1),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -185, -100, 78, 90, 0, 0, castle_grounds_dl_main_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 185, 100, -78, castle_grounds_dl_Water_Box_Mesh_mesh_layer_1),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
@@ -14,7 +15,7 @@ const GeoLayout castle_grounds_area_1[] = {
 		GEO_OPEN_NODE(),
 			GEO_NODE_ORTHO(100.0000),
 			GEO_OPEN_NODE(),
-				GEO_BACKGROUND(BACKGROUND_PURPLE_SKY, geo_skybox_main),
+				GEO_BACKGROUND(BACKGROUND_OCEAN_SKY, geo_skybox_main),
 			GEO_CLOSE_NODE(),
 		GEO_CLOSE_NODE(),
 		GEO_ZBUFFER(1),
