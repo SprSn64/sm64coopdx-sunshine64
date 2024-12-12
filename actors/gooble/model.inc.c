@@ -570,10 +570,10 @@ Gfx gooble_GoopBlob_mesh_layer_1_tri_0[] = {
 };
 
 Vtx gooble_ThingBill_mesh_layer_4_vtx_0[4] = {
-	{{ {-103, 0, 205}, 0, {-16, -16}, {0, 127, 0, 255} }},
-	{{ {103, 0, 0}, 0, {1008, 1008}, {0, 127, 0, 255} }},
-	{{ {-103, 0, 0}, 0, {-16, 1008}, {0, 127, 0, 255} }},
-	{{ {103, 0, 205}, 0, {1008, -16}, {0, 127, 0, 255} }},
+	{{ {-26, 51, 0}, 0, {-16, -16}, {0, 0, 129, 255} }},
+	{{ {26, 0, 0}, 0, {1008, 1008}, {0, 0, 129, 255} }},
+	{{ {-26, 0, 0}, 0, {-16, 1008}, {0, 0, 129, 255} }},
+	{{ {26, 51, 0}, 0, {1008, -16}, {0, 0, 129, 255} }},
 };
 
 Gfx gooble_ThingBill_mesh_layer_4_tri_0[] = {
@@ -605,9 +605,7 @@ Gfx mat_revert_gooble_Gooble_Eyes[] = {
 
 Gfx mat_gooble_RedGoo[] = {
 	gsSPGeometryMode(G_CULL_BACK, 0),
-	gsSPLight(&gooble_RedGoo_lights.l, 1),
-    gsSPLight(&gooble_RedGoo_lights.a, 2),
-    gsSPCopyLightEXT(2, 13),
+	gsSPSetLights1(gooble_RedGoo_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, TEXEL0, 0, PRIMITIVE, 0, TEXEL0, 0, SHADE, 0, TEXEL0, 0, PRIMITIVE, 0),
 	gsSPTexture(65535, 65535, 0, 0, 1),
@@ -628,9 +626,7 @@ Gfx mat_revert_gooble_RedGoo[] = {
 
 Gfx mat_gooble_Slop[] = {
 	gsSPGeometryMode(0, G_TEXTURE_GEN),
-	gsSPLight(&gooble_Slop_lights.l, 1),
-    gsSPLight(&gooble_Slop_lights.a, 2),
-    gsSPCopyLightEXT(2, 15),
+	gsSPSetLights1(gooble_Slop_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
 	gsDPSetTextureLUT(G_TT_RGBA16),
@@ -655,9 +651,7 @@ Gfx mat_revert_gooble_Slop[] = {
 
 Gfx mat_gooble_Gooble_Hair[] = {
 	gsSPGeometryMode(G_CULL_BACK, 0),
-	gsSPLight(&gooble_Gooble_Hair_lights.l, 1),
-    gsSPLight(&gooble_Gooble_Hair_lights.a, 2),
-    gsSPCopyLightEXT(1, 13),
+	gsSPSetLights1(gooble_Gooble_Hair_lights),
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, TEXEL0, 0, ENVIRONMENT, 0, TEXEL0, 0, SHADE, 0, TEXEL0, 0, ENVIRONMENT, 0),
 	gsSPTexture(65535, 65535, 0, 0, 1),

@@ -17,16 +17,6 @@ local function on_level_init()
 
 end
 
-function fluddPickup_init(obj)
-	obj.oFlags = OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE
-	
-	network_init_object(obj, true, nil)
-end
-
-function fluddPickup_loop(obj)
-	--obj.oPosY = obj.oPosY + 0.2
-end
-
 hook_event(HOOK_UPDATE, update)
 hook_event(HOOK_ON_LEVEL_INIT, on_level_init)
 
